@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db, GalleryImage } from '../lib/storage';
-
+import { Image as ImageIcon, Calendar } from 'lucide-react';
 const Gallery: React.FC = () => {
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
