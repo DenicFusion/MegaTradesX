@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
-import Register from './pages/Register';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
@@ -23,7 +22,6 @@ const App: React.FC = () => {
         <Route path="/services" element={<Layout><Services /></Layout>} />
         <Route path="/ebook" element={<Layout><Ebook /></Layout>} />
         <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
-        <Route path="/register" element={<Layout><Register /></Layout>} />
 
         {/* Admin Routes (No Main Layout) */}
         <Route path="/myadmin" element={<AdminLogin />} />
