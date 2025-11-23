@@ -24,31 +24,24 @@ const Ebook: React.FC = () => {
   const handlePayment = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 1. Validation
-    if (!formData.email || !formData.firstName || !formData.lastName || !formData.phone) {
-      alert('Please fill in all details correctly.');
-      return;
-    }
-
     if (!acceptedTerms) {
       alert("Please accept the terms and conditions.");
       return;
     }
 
-    if (typeof window.Korapay === 'undefined') {
-      alert("Payment service is initializing. Please check your internet connection and try again.");
+    if (!window.Korapay) {
+      alert("Payment service is initializing. Please try again in a moment.");
       return;
     }
 
     setLoading(true);
 
-    // 2. KoraPay Initialization
     try {
       window.Korapay.initialize({
         key: 'pk_live_yRJ1XJDqp6P6YjrjY9fargo1LiHgQJrefZ',
         amount: 55000,
         currency: 'NGN',
-        reference: 'MegaTrades-' + Date.now(),
+        reference: 'DenicFX-' + Date.now(),
         customer: {
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
@@ -56,18 +49,17 @@ const Ebook: React.FC = () => {
         },
         onClose: () => {
           setLoading(false);
-          alert('Payment window closed.');
+          alert('Payment cancelled.');
         },
-        onSuccess: (data: any) => {
+        onSuccess: () => {
           setLoading(false);
-          // Redirect to Telegram Channel
           window.location.href = 'https://t.me/+SdoT8IlB2342OGVk';
         }
       });
     } catch (error) {
       console.error("Payment Error:", error);
       setLoading(false);
-      alert("An error occurred initializing payment.");
+      alert("An error occurred initializing payment. Please check your connection.");
     }
   };
 
@@ -164,7 +156,7 @@ const Ebook: React.FC = () => {
                  <h3 className="text-xl font-bold">Secure Checkout</h3>
               </div>
 
-              <form id="paymentForm" onSubmit={handlePayment} className="space-y-4">
+              <form onSubmit={handlePayment} className="space-y-4">
                  <div className="grid grid-cols-2 gap-4">
                     <div>
                        <label className="text-xs text-gray-500 font-bold ml-1 mb-1 block">First Name</label>
