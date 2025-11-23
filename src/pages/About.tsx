@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Shield, BookOpen, Users, Mail, ArrowRight, Play, BarChart2, Target } from 'lucide-react';
+import { CheckCircle, Shield, BookOpen, Users, Mail, Play, BarChart2, Target } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
