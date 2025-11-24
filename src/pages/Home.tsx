@@ -113,8 +113,10 @@ const Home: React.FC = () => {
               poster="https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=1600"
             >
               <source src="/uploads/intro.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+                  Your browser does not support the video tag.
+                </video>
+             </div>
+             <p className="text-sm text-gray-400 mt-4">Intro to Trading: Watch how we navigate the markets daily.</p>
           </div>
         </div>
       </div>
