@@ -4,17 +4,34 @@ import { Menu, X, Facebook, Instagram, Send, Youtube } from 'lucide-react';
 
 // Custom Logo Component (Pure SVG based on user reference)
 const MegaTradeLogo = ({ className = "h-8 w-8" }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    {/* Left Candle (White) */}
-    <rect x="20" y="35" width="12" height="30" fill="white" />
-    <line x1="26" y1="20" x2="26" y2="80" stroke="white" strokeWidth="2" />
+  <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <defs>
+      <linearGradient id="mGradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#ffffff" />
+        <stop offset="100%" stopColor="#4da3ff" />
+      </linearGradient>
+    </defs>
 
-    {/* Middle M Shape (White) */}
-    <path d="M40 40 L55 65 L70 40 L70 60" stroke="white" strokeWidth="8" strokeLinecap="square" fill="none" />
-    
-    {/* Right Candle (Blue) */}
-    <rect x="80" y="30" width="12" height="40" fill="#1fb6ff" />
-    <line x1="86" y1="15" x2="86" y2="85" stroke="#1fb6ff" strokeWidth="2" />
+    {/* Left Candle (White) */}
+    <rect x="10" y="30" width="16" height="40" rx="2" fill="white" />
+    <line x1="18" y1="15" x2="18" y2="85" stroke="white" strokeWidth="3" />
+
+    {/* Second Candle (Light Blue - matches screenshot blue) */}
+    <rect x="35" y="22" width="16" height="56" rx="2" fill="#4da3ff" />
+    <line x1="43" y1="10" x2="43" y2="90" stroke="#4da3ff" strokeWidth="3" />
+
+    {/* M Shape (White → Blue Gradient) */}
+    <path 
+      d="M65 70 L85 30 L105 70 L105 40" 
+      stroke="url(#mGradient)" 
+      strokeWidth="12" 
+      strokeLinecap="round" 
+      fill="none" 
+    />
+
+    {/* Third Candle (Light Blue) */}
+    <rect x="120" y="18" width="16" height="64" rx="2" fill="#4da3ff" />
+    <line x1="128" y1="5" x2="128" y2="95" stroke="#4da3ff" strokeWidth="3" />
   </svg>
 );
 
