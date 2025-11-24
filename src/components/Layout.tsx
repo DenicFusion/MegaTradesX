@@ -89,16 +89,16 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               
               {/* Social Icons */}
               <div className="flex gap-4">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all">
+                <a href="https://www.facebook.com/share/1BMvvAmsNt/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all">
                     <Facebook size={18} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all">
+                <a href="https://www.instagram.com/greatmega1?igsh=NWIwdXA0c3k4dmdi&utm_source=qr" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all">
                     <Instagram size={18} />
                 </a>
                 <a href="https://t.me/greatmega_eo" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-blue-400 hover:text-white transition-all">
                     <Send size={18} />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all">
+                <a href="https://youtube.com/@greatmega1?si=mAI6_sSSw57tH8wO" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all">
                     <Youtube size={18} />
                 </a>
               </div>
