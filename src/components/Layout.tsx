@@ -112,7 +112,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <ul className="space-y-2 text-sm text-gray-500">
                 <li><a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-secondary transition-colors">Terms of Service</a></li>
-                <li><Link to="/myadmin" className="hover:text-secondary transition-colors flex items-center gap-1">Admin Access <ChevronRight size={12}/></Link></li>
               </ul>
             </div>
           </div>
@@ -138,7 +137,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             
             <div className="text-center">
               <p className="text-gray-600 text-xs">
-                &copy; {new Date().getFullYear()} Great Mega Forex. All rights reserved.
+                &copy; {new Date().getFullYear()} MegaTrades. All rights reserved.
               </p>
             </div>
           </div>
