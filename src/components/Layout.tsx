@@ -1,18 +1,25 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { TrendingUp, Menu, X, ChevronRight, Facebook, Instagram, Send, Youtube } from 'lucide-react';
+import { TrendingUp, Menu, X, Facebook, Instagram, Send, Youtube } from 'lucide-react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  // 1. Handle Scroll Effect for Navbar
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // 2. SCROLL TO TOP ON ROUTE CHANGE (Fixes the issue where links stay at bottom)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsMenuOpen(false); // Automatically close mobile menu when a link is clicked
+  }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path ? 'text-secondary font-medium' : 'text-gray-300 hover:text-white';
 
@@ -53,13 +60,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {/* Mobile menu */}
         <div className={`lg:hidden absolute w-full bg-dark-900/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[600px] shadow-2xl' : 'max-h-0'}`}>
           <div className="px-4 pt-2 pb-6 space-y-2">
-            <Link to="/" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Home</Link>
-            <Link to="/services" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Services</Link>
-            <Link to="/ebook" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">eBook</Link>
-            <Link to="/gallery" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Gallery</Link>
-            <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">About</Link>
-            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Contact</Link>
-            <Link to="/register" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 rounded-lg text-base font-medium text-secondary bg-blue-500/10 mt-4">Join Now</Link>
+            <Link to="/" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Home</Link>
+            <Link to="/services" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Services</Link>
+            <Link to="/ebook" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">eBook</Link>
+            <Link to="/gallery" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Gallery</Link>
+            <Link to="/about" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">About</Link>
+            <Link to="/contact" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Contact</Link>
+            <Link to="/register" className="block px-3 py-3 rounded-lg text-base font-medium text-secondary bg-blue-500/10 mt-4">Join Now</Link>
           </div>
         </div>
       </nav>
@@ -148,4 +155,3 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 export default Layout;
-              
