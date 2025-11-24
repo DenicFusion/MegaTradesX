@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { 
-  ArrowRight, Play, Copy, Check, ChevronDown, ChevronUp, 
+  ArrowRight, Copy, Check, ChevronDown, ChevronUp, 
   ExternalLink, BookOpen, Users, Video, TrendingUp, Shield 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,18 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // COLLAGE IMAGES (Add unlimited links here)
+  const collageImages = [
+    "https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1526304640152-d4619684e484?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=400&auto=format&fit=crop"
+  ];
 
   const handleCopy = () => {
     navigator.clipboard.writeText('G1012943001');
@@ -33,6 +45,21 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          display: flex;
+          width: max-content;
+          animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       {/* 1. HERO SECTION */}
       <div className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         {/* Background Image Overlay */}
@@ -78,22 +105,23 @@ const Home: React.FC = () => {
             <p className="text-gray-400">Watch how we navigate the markets daily.</p>
           </div>
           
-          <Link to="/services" className="block glass-panel p-2 rounded-3xl relative aspect-video group cursor-pointer overflow-hidden">
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center group-hover:bg-black/50 transition-all z-10">
-              <div className="w-20 h-20 bg-secondary/90 rounded-full flex items-center justify-center pl-1 shadow-2xl shadow-secondary/30 group-hover:scale-110 transition-transform">
-                <Play fill="white" className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <img 
-              src="https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=1600&auto=format&fit=crop" 
-              alt="Intro Video Thumbnail" 
-              className="w-full h-full object-cover rounded-2xl opacity-60" 
-            />
-          </Link>
+          {/* Video Player */}
+          <div className="glass-panel p-2 rounded-3xl relative aspect-video overflow-hidden shadow-2xl">
+            <video 
+              controls 
+              className="w-full h-full object-cover rounded-2xl"
+              poster="https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=1600"
+            >
+              <source src="/uploads/intro.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+             </div>
+             <p className="text-sm text-gray-400 mt-4">Intro to Trading: Watch how we navigate the markets daily.</p>
+          </div>
         </div>
       </div>
 
-      {/* 3. HOW WE OPERATE */}
+      {/* 4. HOW WE OPERATE */}
       <div id="services" className="py-20 bg-dark-900">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">How We Operate</h2>
@@ -103,7 +131,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. HOW TO GET STARTED */}
+      {/* 5. HOW TO GET STARTED */}
       <div className="py-24 relative overflow-hidden">
         {/* Abstract Background */}
         <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] -z-10"></div>
@@ -116,7 +144,7 @@ const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="glass-panel p-8 rounded-2xl relative border-t-4 border-secondary">
+            <div className="glass-panel p-8 rounded-2xl relative border-t-4 border-secondary hover:-translate-y-2 transition-transform duration-300">
               <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-secondary rounded-full flex items-center justify-center font-bold text-white text-lg shadow-lg">1</div>
               <h3 className="text-xl font-bold mt-4 mb-4 text-center">Register Account</h3>
               <p className="text-gray-400 text-sm text-center mb-6">
@@ -148,7 +176,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="glass-panel p-8 rounded-2xl relative border-t-4 border-purple-500">
+            <div className="glass-panel p-8 rounded-2xl relative border-t-4 border-purple-500 hover:-translate-y-2 transition-transform duration-300">
               <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center font-bold text-white text-lg shadow-lg">2</div>
               <h3 className="text-xl font-bold mt-4 mb-4 text-center">Complete Setup</h3>
               <p className="text-gray-400 text-sm text-center mb-8">
@@ -160,7 +188,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="glass-panel p-8 rounded-2xl relative border-t-4 border-green-500">
+            <div className="glass-panel p-8 rounded-2xl relative border-t-4 border-green-500 hover:-translate-y-2 transition-transform duration-300">
               <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center font-bold text-white text-lg shadow-lg">3</div>
               <h3 className="text-xl font-bold mt-4 mb-4 text-center">Activate & Trade</h3>
               <p className="text-gray-400 text-sm text-center mb-8">
@@ -173,8 +201,27 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* 5. WHY TRADE WITH US & WHAT WE OFFER */}
+      
+      {/* 3. AUTO-PLAYING IMAGE COLLAGE */}
+      <div className="py-12 bg-dark-900 border-y border-white/5 overflow-hidden">
+        <div className="relative w-full">
+          <div className="animate-scroll flex gap-0">
+             {/* Duplicate the array to create seamless loop */}
+             {[...collageImages, ...collageImages].map((img, index) => (
+                <div key={index} className="w-[300px] h-[200px] flex-shrink-0 relative group">
+                   <img 
+                     src={img} 
+                     alt={`Gallery ${index}`} 
+                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-r border-dark-900"
+                   />
+                   <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+             ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* 6. WHY TRADE WITH US & WHAT WE OFFER */}
       <div className="bg-dark-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -187,7 +234,7 @@ const Home: React.FC = () => {
                   "Fast withdrawals & transparent reporting",
                   "Real-time support and community access"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 glass-panel p-4 rounded-xl">
+                  <div key={idx} className="flex items-center gap-4 glass-panel p-4 rounded-xl hover:bg-white/5 transition-colors">
                     <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center shrink-0">
                       <Check size={16} className="text-green-400" />
                     </div>
@@ -203,23 +250,36 @@ const Home: React.FC = () => {
                 Trading tools for beginners, premium signal services, and educational resources tailored for both beginners and professional traders. We bridge the gap between learning and earning.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                 <div className="bg-dark-900 p-4 rounded-xl text-center">
-                    <Shield className="w-8 h-8 mx-auto text-blue-400 mb-2" />
-                    <span className="font-bold text-sm">Signals</span>
-                 </div>
-                 <div className="bg-dark-900 p-4 rounded-xl text-center">
-                    <BookOpen className="w-8 h-8 mx-auto text-purple-400 mb-2" />
-                    <span className="font-bold text-sm">Education</span>
-                 </div>
+                 {/* Signals Button - Updated Link */}
+                 <a 
+                   href="https://t.me/greatmega_eo" 
+                   target="_blank" 
+                   rel="noreferrer" 
+                   className="bg-dark-900 p-4 rounded-xl text-center group hover:bg-secondary transition-all cursor-pointer border border-white/5 hover:border-transparent"
+                 >
+                    <Shield className="w-8 h-8 mx-auto text-blue-400 mb-2 group-hover:text-white transition-colors" />
+                    <span className="font-bold text-sm block group-hover:text-white">Signals</span>
+                    <span className="text-[10px] text-gray-500 group-hover:text-white/80">Join now</span>
+                 </a>
+
+                 {/* Education Button - Updated Link */}
+                 <Link 
+                   to="/ebook"
+                   className="bg-dark-900 p-4 rounded-xl text-center group hover:bg-purple-600 transition-all cursor-pointer border border-white/5 hover:border-transparent"
+                 >
+                    <BookOpen className="w-8 h-8 mx-auto text-purple-400 mb-2 group-hover:text-white transition-colors" />
+                    <span className="font-bold text-sm block group-hover:text-white">Education</span>
+                    <span className="text-[10px] text-gray-500 group-hover:text-white/80">Access eBook</span>
+                 </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 6. EBOOK & RESOURCES */}
+      {/* 7. EBOOK & RESOURCES */}
       <div className="py-24 max-w-7xl mx-auto px-4">
-        <div className="glass-panel rounded-3xl overflow-hidden">
+        <div className="glass-panel rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all">
           <div className="grid md:grid-cols-2">
             <div className="p-12 flex flex-col justify-center">
               <div className="inline-block px-3 py-1 rounded bg-purple-500/20 text-purple-400 text-xs font-bold w-fit mb-4">BEST SELLER</div>
@@ -243,7 +303,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 7. MASTERCLASS & LIVE TRADING */}
+      {/* 8. MASTERCLASS & LIVE TRADING */}
       <div className="bg-dark-950 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -313,7 +373,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 8. FAQ SECTION */}
+      {/* 9. FAQ SECTION */}
       <div className="py-24 bg-dark-900">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -342,7 +402,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 9. FOOTER CTA */}
+      {/* 10. FOOTER CTA */}
       <div className="py-20 bg-gradient-to-br from-secondary to-blue-800 text-center px-4">
          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Trade & Grow Together!</h2>
          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">

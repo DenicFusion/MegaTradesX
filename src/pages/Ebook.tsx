@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Check, Shield, Lock, CreditCard } from 'lucide-react';
+import { BookOpen, Check, Shield, CreditCard } from 'lucide-react';
 
 declare global {
   interface Window {
@@ -75,7 +75,7 @@ const Ebook: React.FC = () => {
           alert('Payment window closed');
         },
 
-        onSuccess: (data: any) => {
+        onSuccess: () => {
           setLoading(false);
           window.location.href = 'https://t.me/+SdoT8IlB2342OGVk';
         }

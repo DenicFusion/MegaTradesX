@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { TrendingUp, Menu, X, ChevronRight } from 'lucide-react';
+import { TrendingUp, Menu, X, ChevronRight, Facebook, Instagram, Send, Youtube } from 'lucide-react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,10 +76,27 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <TrendingUp className="h-6 w-6 text-secondary" />
                 <span className="text-lg font-bold text-white">MEGA<span className="text-secondary">TRADE</span></span>
               </div>
-              <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
+              <p className="text-gray-500 text-sm max-w-xs leading-relaxed mb-6">
                 Leading the way in institutional-grade forex trading services. Secure, fast, and reliable platform for traders worldwide.
               </p>
+              
+              {/* Social Icons */}
+              <div className="flex gap-4">
+                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all">
+                    <Facebook size={18} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all">
+                    <Instagram size={18} />
+                </a>
+                <a href="https://t.me/greatmega_eo" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-blue-400 hover:text-white transition-all">
+                    <Send size={18} />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all">
+                    <Youtube size={18} />
+                </a>
+              </div>
             </div>
+            
             <div>
               <h3 className="text-white font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-500">
@@ -89,6 +106,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
               </ul>
             </div>
+            
             <div>
               <h3 className="text-white font-bold mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-gray-500">
@@ -98,10 +116,31 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/5 pt-8 text-center">
-            <p className="text-gray-600 text-xs">
-              &copy; {new Date().getFullYear()} Great Mega Forex. All rights reserved. Trading involves risk.
-            </p>
+          
+          <div className="border-t border-white/5 pt-8">
+            <div className="grid md:grid-cols-2 gap-8 text-xs text-gray-600 mb-8">
+                <div>
+                    <h4 className="text-gray-500 font-bold mb-2">Disclaimer</h4>
+                    <p className="leading-relaxed">
+                        Trading forex and CFDs involves significant risk and can result in the loss of your invested capital. 
+                        You should not invest more than you can afford to lose and should ensure that you fully understand the risks involved. 
+                        Past performance is not a guarantee of future results.
+                    </p>
+                </div>
+                <div>
+                    <h4 className="text-gray-500 font-bold mb-2">Refund Policy</h4>
+                    <p className="leading-relaxed">
+                        All payments made for services, signals, or digital products (eBooks) are final and non-refundable. 
+                        By subscribing or purchasing, you acknowledge and agree to these terms. If you have any issues, please contact support.
+                    </p>
+                </div>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-gray-600 text-xs">
+                &copy; {new Date().getFullYear()} Great Mega Forex. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
@@ -110,3 +149,4 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 export default Layout;
+              
