@@ -112,7 +112,7 @@ const Home: React.FC = () => {
               className="w-full h-full object-cover rounded-2xl"
               poster="https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=1600"
             >
-              <source src="uploads/intro.mp4" type="video/mp4" />
+              <source src="/uploads/intro.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
