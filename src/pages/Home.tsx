@@ -119,25 +119,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. AUTO-PLAYING IMAGE COLLAGE */}
-      <div className="py-12 bg-dark-900 border-y border-white/5 overflow-hidden">
-        <div className="relative w-full">
-          <div className="animate-scroll flex gap-0">
-             {/* Duplicate the array to create seamless loop */}
-             {[...collageImages, ...collageImages].map((img, index) => (
-                <div key={index} className="w-[300px] h-[200px] flex-shrink-0 relative group">
-                   <img 
-                     src={img} 
-                     alt={`Gallery ${index}`} 
-                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-r border-dark-900"
-                   />
-                   <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-             ))}
-          </div>
-        </div>
-      </div>
-
       {/* 4. HOW WE OPERATE */}
       <div id="services" className="py-20 bg-dark-900">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -218,7 +199,26 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
+      
+      {/* 3. AUTO-PLAYING IMAGE COLLAGE */}
+      <div className="py-12 bg-dark-900 border-y border-white/5 overflow-hidden">
+        <div className="relative w-full">
+          <div className="animate-scroll flex gap-0">
+             {/* Duplicate the array to create seamless loop */}
+             {[...collageImages, ...collageImages].map((img, index) => (
+                <div key={index} className="w-[300px] h-[200px] flex-shrink-0 relative group">
+                   <img 
+                     src={img} 
+                     alt={`Gallery ${index}`} 
+                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-r border-dark-900"
+                   />
+                   <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+             ))}
+          </div>
+        </div>
+      </div>
+      
       {/* 6. WHY TRADE WITH US & WHAT WE OFFER */}
       <div className="bg-dark-800 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -257,7 +257,7 @@ const Home: React.FC = () => {
                  >
                     <Shield className="w-8 h-8 mx-auto text-blue-400 mb-2 group-hover:text-white transition-colors" />
                     <span className="font-bold text-sm block group-hover:text-white">Signals</span>
-                    <span className="text-[10px] text-gray-500 group-hover:text-white/80">Click to Join</span>
+                    <span className="text-[10px] text-gray-500 group-hover:text-white/80">Join now</span>
                  </a>
 
                  {/* Education Button - Updated Link */}
@@ -267,7 +267,7 @@ const Home: React.FC = () => {
                  >
                     <BookOpen className="w-8 h-8 mx-auto text-purple-400 mb-2 group-hover:text-white transition-colors" />
                     <span className="font-bold text-sm block group-hover:text-white">Education</span>
-                    <span className="text-[10px] text-gray-500 group-hover:text-white/80">Get the eBook</span>
+                    <span className="text-[10px] text-gray-500 group-hover:text-white/80">Access eBook</span>
                  </Link>
               </div>
             </div>
