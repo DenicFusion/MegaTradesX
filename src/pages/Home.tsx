@@ -10,18 +10,21 @@ const Home: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // COLLAGE IMAGES
-  const collageImages = [
-    "https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1526304640152-d4619684e484?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=400&auto=format&fit=crop"
-  ];
-
+  // COLLAGE IMAGES (Updated)
+const collageImages = [
+  "https://i.ibb.co/qFR35sMt/IMG-20251124-135833-722.jpg",
+  "https://i.ibb.co/7xVk75fw/IMG-20251124-135834-562.jpg",
+  "https://i.ibb.co/hRvW7Lsd/IMG-20251124-135834-085.jpg",
+  "https://i.ibb.co/3Y4x9H2s/IMG-20251124-135833-968.jpg",
+  "https://i.ibb.co/G3r56WqH/IMG-20251124-135817-854.jpg",
+  "https://i.ibb.co/My7XBhp4/IMG-20251124-135818-577.jpg",
+  "https://i.ibb.co/d4XHHJxr/IMG-20251124-135817-729.jpg",
+  "https://i.ibb.co/PsLGwvQ4/IMG-20251124-135817-899.jpg",
+  "https://i.ibb.co/ksLd53R4/IMG-20251124-135817-669.jpg",
+  "https://i.ibb.co/jkh69PCF/IMG-20251124-135817-602.jpg",
+  "https://i.ibb.co/7xLcdRvx/IMG-20251124-135827-045.jpg",
+  "https://i.ibb.co/m5yJ5N7Y/IMG-20251124-135834-311.jpg"
+];
   const handleCopy = () => {
     navigator.clipboard.writeText('G1012943001');
     setCopied(true);
