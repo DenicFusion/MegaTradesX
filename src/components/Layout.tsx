@@ -2,39 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Facebook, Instagram, Send, Youtube } from 'lucide-react';
 
-// Custom Logo Component (Pure SVG based on user reference)
-const MegaTradeLogo = ({ className = "h-8 w-8" }: { className?: string }) => (
-  <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <defs>
-      <linearGradient id="mGradient" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#ffffff" />
-        <stop offset="100%" stopColor="#4da3ff" />
-      </linearGradient>
-    </defs>
-
-    {/* Left Candle (White) */}
-    <rect x="10" y="30" width="16" height="40" rx="2" fill="white" />
-    <line x1="18" y1="15" x2="18" y2="85" stroke="white" strokeWidth="3" />
-
-    {/* Second Candle (Light Blue - matches screenshot blue) */}
-    <rect x="35" y="22" width="16" height="56" rx="2" fill="#4da3ff" />
-    <line x1="43" y1="10" x2="43" y2="90" stroke="#4da3ff" strokeWidth="3" />
-
-    {/* M Shape (White → Blue Gradient) */}
-    <path 
-      d="M65 70 L85 30 L105 70 L105 40" 
-      stroke="url(#mGradient)" 
-      strokeWidth="12" 
-      strokeLinecap="round" 
-      fill="none" 
-    />
-
-    {/* Third Candle (Light Blue) */}
-    <rect x="120" y="18" width="16" height="64" rx="2" fill="#4da3ff" />
-    <line x1="128" y1="5" x2="128" y2="95" stroke="#4da3ff" strokeWidth="3" />
-  </svg>
-);
-
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -60,13 +27,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark-900/95 backdrop-blur-md border-b border-white/5 py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-900/50 to-blue-900/20 flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:shadow-blue-500/20 transition-all border border-white/5">
-                <MegaTradeLogo className="h-8 w-8" />
+            {/* LOGO - Left Side */}
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:shadow-blue-500/20 transition-all border border-white/10 p-1.5">
+                <img 
+                  src="https://i.ibb.co/VcBQmWg9/IMG-20251124-WA0019-removebg-preview.png" 
+                  alt="MegaTrade Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-xl font-bold tracking-wide text-white">MEGA<span className="text-secondary">TRADE</span></span>
             </Link>
             
+            {/* Desktop Menu */}
             <div className="hidden lg:block">
               <div className="ml-10 flex items-center space-x-6 lg:space-x-8">
                 <Link to="/" className={`transition-colors duration-200 text-sm uppercase tracking-wider ${isActive('/')}`}>Home</Link>
@@ -81,6 +54,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </div>
             </div>
 
+            {/* Mobile Menu Toggle */}
             <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white p-2 rounded-lg hover:bg-white/5">
                 {isMenuOpen ? <X /> : <Menu />}
@@ -89,7 +63,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu Dropdown */}
         <div className={`lg:hidden absolute w-full bg-dark-900/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[600px] shadow-2xl' : 'max-h-0'}`}>
           <div className="px-4 pt-2 pb-6 space-y-2">
             <Link to="/" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Home</Link>
@@ -98,7 +72,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Link to="/gallery" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Gallery</Link>
             <Link to="/about" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">About</Link>
             <Link to="/contact" className="block px-3 py-3 rounded-lg text-base font-medium text-white hover:bg-white/5">Contact</Link>
-            <Link to="/register" className="block px-3 py-3 rounded-lg text-base font-medium text-secondary bg-blue-500/10 mt-4">Join Now</Link>
+            <Link to="/register" className="block px-3 py-3 rounded-lg text-base font-medium text-secondary bg-blue-500/10 mt-4 text-center">Join Now</Link>
           </div>
         </div>
       </nav>
@@ -110,10 +84,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <footer className="bg-dark-950 border-t border-white/5 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
+            {/* Brand Column */}
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10">
-                    <MegaTradeLogo className="h-6 w-6" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 p-1">
+                    <img 
+                      src="https://i.ibb.co/VcBQmWg9/IMG-20251124-WA0019-removebg-preview.png" 
+                      alt="Logo" 
+                      className="w-full h-full object-contain" 
+                    />
                 </div>
                 <span className="text-lg font-bold text-white">MEGA<span className="text-secondary">TRADE</span></span>
               </div>
@@ -123,21 +102,22 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               
               {/* Social Icons */}
               <div className="flex gap-4">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all">
+                <a href="https://www.facebook.com/share/17waUEqjry/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-secondary hover:text-white transition-all">
                     <Facebook size={18} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all">
+                <a href="https://www.instagram.com/greatmega1?igsh=NWIwdXA0c3k4dmdi&utm_source=qr" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition-all">
                     <Instagram size={18} />
                 </a>
                 <a href="https://t.me/greatmega_eo" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-blue-400 hover:text-white transition-all">
                     <Send size={18} />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all">
+                <a href="https://youtube.com/@greatmega1?si=mAI6_sSSw57tH8wO" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all">
                     <Youtube size={18} />
                 </a>
               </div>
             </div>
             
+            {/* Quick Links */}
             <div>
               <h3 className="text-white font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-500">
@@ -148,6 +128,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </ul>
             </div>
             
+            {/* Legal */}
             <div>
               <h3 className="text-white font-bold mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-gray-500">
@@ -157,6 +138,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
           
+          {/* Bottom Legal Text */}
           <div className="border-t border-white/5 pt-8">
             <div className="grid md:grid-cols-2 gap-8 text-xs text-gray-600 mb-8">
                 <div>
