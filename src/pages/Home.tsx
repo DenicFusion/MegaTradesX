@@ -428,7 +428,7 @@ const Home: React.FC = () => {
          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
              Join the fastest growing community of profitable traders today.
          </p>
-         <Link to="/home" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
+         <Link to="/register" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
              Start Now
          </Link>
       </div>
