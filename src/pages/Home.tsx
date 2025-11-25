@@ -117,7 +117,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Intro to Trading</h2>
-            </p>
+            <p className="text-sm text-gray-400 mt-4 text-center">Intro to Trading: Watch how we navigate the markets daily.</p>
           </div>
           
           {/* Video Player */}
