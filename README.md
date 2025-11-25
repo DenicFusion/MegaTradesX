@@ -35,7 +35,3 @@ A modern, high-performance trading platform interface built with React, Vite, an
    ```bash
    npm run build
    ```
-
-## Admin Access
-- URL: `/myadmin`
-- Default Password: `admin123`
