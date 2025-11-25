@@ -421,17 +421,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* 10. FOOTER CTA */}
-      <div className="py-20 bg-gradient-to-br from-secondary to-blue-800 text-center px-4">
-         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Trade & Grow Together!</h2>
-         <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
-             Join the fastest growing community of profitable traders today.
-         </p>
-         <Link to="/home#intro" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
-             Start Now
-         </Link>
-      </div>
     </>
   );
 };
