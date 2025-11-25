@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight, Copy, Check, ChevronDown, ChevronUp, 
-  ExternalLink, BookOpen, Users, Video, TrendingUp, Shield 
+  ExternalLink, BookOpen, Users, TrendingUp, Shield 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     "https://i.ibb.co/3Y4x9H2s/IMG-20251124-135833-968.jpg",
     "https://i.ibb.co/G3r56WqH/IMG-20251124-135817-854.jpg",
     "https://i.ibb.co/My7XBhp4/IMG-20251124-135818-577.jpg",
-    "https://i.ibb.co/d4XHHJxr/IMG-20251124-135817-729.jpg",
+    "https://i.ibb.co/d4XHHJxr/IMG-20251124-1358t17-729.jpg",
     "https://i.ibb.co/PsLGwvQ4/IMG-20251124-135817-899.jpg",
     "https://i.ibb.co/ksLd53R4/IMG-20251124-135817-669.jpg",
     "https://i.ibb.co/jkh69PCF/IMG-20251124-135817-602.jpg",
