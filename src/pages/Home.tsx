@@ -97,7 +97,7 @@ const Home: React.FC = () => {
 
           {/* Intro Video Player */}
           <div className="mt-16 max-w-4xl mx-auto animate-fade-in">
-             <div className="glass-panel p-2 rounded-3xl relative aspect-video overflow-hidden shadow-2xl border border-white/10">
+             <div className="glass-panel p-2 rounded-3xl relative h-[320px] md:h-[500px] lg:h-[600px] overflow-hidden shadow-2xl border border-white/10">
                 <video 
                   controls 
                   playsInline
