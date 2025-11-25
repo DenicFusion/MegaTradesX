@@ -346,19 +346,11 @@ const Home: React.FC = () => {
                      Join Next Session <ArrowRight size={16} />
                   </Link>
                </div>
-               <div className="order-1 md:order-2">
-                  <div className="glass-panel p-2 rounded-2xl">
-                     <img src="https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=800&auto=format&fit=crop" className="rounded-xl w-full" alt="Live Trading" />
-                  </div>
-               </div>
             </div>
 
             {/* Masterclass Mentorship */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
                <div>
-                  <div className="glass-panel p-2 rounded-2xl">
-                     <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b955?q=80&w=800&auto=format&fit=crop" className="rounded-xl w-full" alt="Mentorship" />
-                  </div>
                </div>
                <div>
                   <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-6">
