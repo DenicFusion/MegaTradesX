@@ -117,7 +117,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Intro to Trading</h2>
-            <p className="text-gray-400">Watch how we navigate the markets daily.</p>
+            </p>
           </div>
           
           {/* Video Player */}
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p className="text-sm text-gray-400 mt-4 text-center">Intro to Trading: Watch how we navigate the markets daily.</p>
+          <p className="text-sm text-gray-400 mt-4 text-center">Learn strategies. Earn Profitably</p>
         </div>
       </div>
 
@@ -428,7 +428,7 @@ const Home: React.FC = () => {
          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
              Join the fastest growing community of profitable traders today.
          </p>
-         <Link to="/register" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
+         <Link to="/home/#intro" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
              Start Now
          </Link>
       </div>
