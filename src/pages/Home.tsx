@@ -117,7 +117,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Intro to Trading</h2>
-            <p className="text-gray-400">Watch how we navigate the markets daily.</p>
+            <p className="text-gray-400">Learn and Earn Smart</p>
           </div>
           
           {/* Video Player */}
@@ -336,7 +336,7 @@ const Home: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
                <div className="order-2 md:order-1">
                   <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
-                     <Video className="text-red-500" />
+                     <img src="https://i.ibb.co/QvCGz5FC/images-13.jpg" className="rounded-xl w-full" alt="Live trading" />
                   </div>
                   <h3 className="text-3xl font-bold mb-4">Live Trading Session</h3>
                   <p className="text-gray-400 leading-relaxed mb-6">
