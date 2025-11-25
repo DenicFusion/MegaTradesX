@@ -116,8 +116,7 @@ const Home: React.FC = () => {
       <div className="bg-dark-950 py-20 relative border-t border-white/5">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Intro to Trading</h2>
-            <p className="text-gray-400">Watch how we navigate the markets daily.</p>
+            <h2 className="text-3xl font-bold mb-4">Intro to Trading</h2>            
           </div>
           
           {/* Video Player */}
@@ -131,7 +130,7 @@ const Home: React.FC = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p className="text-sm text-gray-400 mt-4 text-center">Intro to Trading: Watch how we navigate the markets daily.</p>
+          <p className="text-sm text-gray-400 mt-4 text-center">Learn strategies. Earn Profitably.</p>
         </div>
       </div>
 
@@ -324,56 +323,62 @@ const Home: React.FC = () => {
       </div>
 
       {/* 8. MASTERCLASS & LIVE TRADING */}
-      <div className="bg-dark-950 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-             <h2 className="text-4xl font-bold mb-4">Ready to Level Up?</h2>
-             <p className="text-gray-400">Join exclusive programs designed for serious traders.</p>
+<div className="bg-dark-950 py-24">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold mb-4">Ready to Level Up?</h2>
+      <p className="text-gray-400">Join exclusive programs designed for serious traders.</p>
+    </div>
+
+    <div className="space-y-20">
+      {/* Live Trading */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
+            <Video className="text-red-500" />
           </div>
 
-          <div className="space-y-20">
-            {/* Live Trading */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-               <div className="order-2 md:order-1">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
-                     <Video className="text-red-500" />
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4">Live Trading Session</h3>
-                  <p className="text-gray-400 leading-relaxed mb-6">
-                    Experience the market in real time with our Live Trading Sessions. Watch our experts analyze charts, execute trades, and explain their decisions as they happen. It’s the fastest way to learn practical skills.
-                  </p>
-                  <Link to="/services" className="text-secondary font-bold hover:underline flex items-center gap-1">
-                     Join Next Session <ArrowRight size={16} />
-                  </Link>
-               </div>
-               <div className="order-1 md:order-2">
-                  <div className="glass-panel p-2 rounded-2xl">
-                     <img src="https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=800&auto=format&fit=crop" className="rounded-xl w-full" alt="Live Trading" />
-                  </div>
-               </div>
-            </div>
+          <h3 className="text-3xl font-bold mb-4">Live Trading Session</h3>
 
-            {/* Masterclass Mentorship */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-               <div>
-                  <div className="glass-panel p-2 rounded-2xl">
-                     <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b955?q=80&w=800&auto=format&fit=crop" className="rounded-xl w-full" alt="Mentorship" />
-                  </div>
-               </div>
-               <div>
-                  <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-6">
-                     <Users className="text-secondary" />
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4">Masterclass Mentorship</h3>
-                  <p className="text-gray-400 leading-relaxed mb-6">
-                    Our Masterclass is more than just lessons — it’s a mentorship experience. You’ll learn directly from seasoned traders who walk you through proven strategies, mindset development, and risk management.
-                  </p>
-                  <Link to="/ebook" className="px-8 py-3 bg-secondary rounded-full text-white font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all">
-                     Join the Masterclass
-                  </Link>
-               </div>
-            </div>
+          <p className="text-gray-400 leading-relaxed mb-6">
+            Experience the market in real time with our Live Trading Sessions. Watch our experts analyze charts, execute trades, and explain their decisions as they happen. It’s the fastest way to learn practical skills.
+          </p>
 
+          <Link to="/services" className="text-secondary font-bold hover:underline flex items-center gap-1">
+            Join Next Session <ArrowRight size={16} />
+          </Link>
+        </div>
+
+        {/* EMPTY SIDE (Image Removed) */}
+        <div className="hidden md:block"></div>
+      </div>
+
+      {/* Masterclass Mentorship */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="hidden md:block"></div>
+
+        <div>
+          <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-6">
+            <Users className="text-secondary" />
+          </div>
+
+          <h3 className="text-3xl font-bold mb-4">Masterclass Mentorship</h3>
+
+          <p className="text-gray-400 leading-relaxed mb-6">
+            Our Masterclass is more than just lessons — it’s a mentorship experience. You’ll learn directly from seasoned traders who walk you through proven strategies, mindset development, and risk management.
+          </p>
+
+          <Link
+            to="/ebook"
+            className="px-8 py-3 bg-secondary rounded-full text-white font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all"
+          >
+            Join the Masterclass
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
              {/* Community Meetup */}
              <div className="glass-panel p-8 md:p-12 rounded-3xl text-center relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -428,7 +433,7 @@ const Home: React.FC = () => {
          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
              Join the fastest growing community of profitable traders today.
          </p>
-         <Link to="/register" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
+         <Link to="/home/#register" className="inline-block px-10 py-4 bg-white text-blue-600 font-bold text-xl rounded-full hover:shadow-2xl hover:scale-105 transition-all">
              Start Now
          </Link>
       </div>
