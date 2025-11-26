@@ -100,14 +100,15 @@ const Home: React.FC = () => {
             
             <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
               A modern trading service focused on disciplined strategies, data-driven decisions, 
-              and real, consistent results — helping traders build confidence and mastery in every market move.
+              and real, consistent results â€” helping traders build confidence and mastery in every market move.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* SIDE BY SIDE BUTTONS (Fixed Layout) */}
+            <div className="flex flex-row gap-3 justify-center items-center w-full max-w-md mx-auto">
               {/* Service Button (Blue, Down Slant) */}
               <Link 
                 to="/services" 
-                className="flex items-center gap-2 px-8 py-4 bg-secondary rounded-full text-white font-bold text-lg hover:bg-blue-600 transition-all hover:scale-105 shadow-lg shadow-blue-500/25 w-full sm:w-auto justify-center"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-4 bg-secondary rounded-2xl text-white font-bold text-base sm:text-lg hover:bg-blue-600 transition-all hover:scale-105 shadow-lg shadow-blue-500/25"
               >
                 Our Service <ArrowDownRight size={20} />
               </Link>
@@ -117,7 +118,7 @@ const Home: React.FC = () => {
                 href="https://t.me/greatmega_eo" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-2 px-8 py-4 bg-green-600 rounded-full text-white font-bold text-lg hover:bg-green-500 transition-all hover:scale-105 shadow-lg shadow-green-500/25 w-full sm:w-auto justify-center"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-4 bg-green-600 rounded-2xl text-white font-bold text-base sm:text-lg hover:bg-green-500 transition-all hover:scale-105 shadow-lg shadow-green-500/25"
               >
                 Our Channel <ArrowUpRight size={20} />
               </a>
