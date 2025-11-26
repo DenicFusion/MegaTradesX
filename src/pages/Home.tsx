@@ -110,7 +110,7 @@ const Home: React.FC = () => {
                 to="/services" 
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-4 bg-secondary rounded-2xl text-white font-bold text-base sm:text-lg hover:bg-blue-600 transition-all hover:scale-105 shadow-lg shadow-blue-500/25"
               >
-                Our Service <ArrowDownRight size={20} />
+                Service <ArrowDownRight size={20} />
               </Link>
 
               {/* Channel Button (Green, Up Slant) */}
@@ -120,7 +120,7 @@ const Home: React.FC = () => {
                 rel="noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-4 bg-green-600 rounded-2xl text-white font-bold text-base sm:text-lg hover:bg-green-500 transition-all hover:scale-105 shadow-lg shadow-green-500/25"
               >
-                Our Channel <ArrowUpRight size={20} />
+                Channel <ArrowUpRight size={20} />
               </a>
             </div>
           </div>
