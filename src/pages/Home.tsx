@@ -357,7 +357,6 @@ const Home: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
                <div>
                   <div className="glass-panel p-2 rounded-2xl">
-                     <img src="" className="rounded-xl w-full" alt="" />
                   </div>
                </div>
                <div>
@@ -385,8 +384,6 @@ const Home: React.FC = () => {
                         MegaTrades isn’t just a trading service — it’s a growing community. Our meetups bring members together to share insights, build connections, and learn from each other in real time.
                     </p>
                     <button className="text-white border border-white/20 hover:bg-white/5 px-6 py-2 rounded-full transition-all">
-                        View Upcoming Events
-                    </button>
                 </div>
              </div>
           </div>
