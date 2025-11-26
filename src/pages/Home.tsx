@@ -103,10 +103,24 @@ const Home: React.FC = () => {
               and real, consistent results — helping traders build confidence and mastery in every market move.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services" className="px-8 py-4 bg-secondary rounded-full text-white font-bold text-lg hover:bg-blue-600 transition-all hover:scale-105 shadow-lg shadow-blue-500/25">
-                View Our Services
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {/* Service Button (Blue, Down Slant) */}
+              <Link 
+                to="/services" 
+                className="flex items-center gap-2 px-8 py-4 bg-secondary rounded-full text-white font-bold text-lg hover:bg-blue-600 transition-all hover:scale-105 shadow-lg shadow-blue-500/25 w-full sm:w-auto justify-center"
+              >
+                Our Service <ArrowDownRight size={20} />
               </Link>
+
+              {/* Channel Button (Green, Up Slant) */}
+              <a 
+                href="https://t.me/greatmega_eo" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center gap-2 px-8 py-4 bg-green-600 rounded-full text-white font-bold text-lg hover:bg-green-500 transition-all hover:scale-105 shadow-lg shadow-green-500/25 w-full sm:w-auto justify-center"
+              >
+                Our Channel <ArrowUpRight size={20} />
+              </a>
             </div>
           </div>
         </div>
@@ -144,7 +158,7 @@ const Home: React.FC = () => {
           </p>
         </div>
       </div>
-
+      
       {/* 4. HOW TO GET STARTED */}
       <div className="py-24 relative overflow-hidden">
         {/* Abstract Background */}
