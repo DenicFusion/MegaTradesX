@@ -132,20 +132,20 @@ const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Intro to Trading</h2>
-            <p className="text-gray-400">Watch how we navigate the markets daily.</p>
+            <p className="text-gray-400">Watch and learn procedures to the daily market.</p>
           </div>
           
           {/* Video Player */}
-          <div className="glass-panel p-2 rounded-3xl relative aspect-video overflow-hidden shadow-2xl">
-            <video 
-              controls 
-              className="w-full h-full object-cover rounded-2xl"
-              poster="https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=1600"
-            >
-              <source src="/uploads/intro.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <div className="glass-panel p-2 rounded-3xl relative h-[320px] md:h-[500px] overflow-hidden shadow-2xl">
+  <video 
+    controls 
+    className="w-full h-full object-cover rounded-2xl"
+    poster="https://images.unsplash.com/photo-1535320903710-d9cf11350062?q=80&w=1600"
+  >
+    <source src="/uploads/intro.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
           <p className="text-sm text-gray-400 mt-4 text-center">Learn strategies. Earn Profitably</p>
         </div>
       </div>
