@@ -323,7 +323,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* 8. MASTERCLASS & LIVE TRADING */}
+          {/* 8. MASTERCLASS & LIVE TRADING */}
       <div className="bg-dark-950 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -334,47 +334,36 @@ const Home: React.FC = () => {
           <div className="space-y-20">
             {/* Live Trading */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
-               <div className="order-2 md:order-1">
-                  <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
-                     <Video className="text-red-500" />
+               <div className="order-2 md:order-1 glass-panel p-8 rounded-3xl text-center">
+                  <div className="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                     <Video className="text-red-500 w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold mb-4">Live Trading Session</h3>
                   <p className="text-gray-400 leading-relaxed mb-6">
                     Experience the market in real time with our Live Trading Sessions. Watch our experts analyze charts, execute trades, and explain their decisions as they happen. It’s the fastest way to learn practical skills.
                   </p>
-                  <Link to="/services" className="text-secondary font-bold hover:underline flex items-center gap-1">
+                  <Link to="/services" className="text-secondary font-bold hover:underline flex items-center justify-center gap-1">
                      Join Next Session <ArrowRight size={16} />
                   </Link>
                </div>
-               <div className="order-1 md:order-2">
-                  <div className="glass-panel p-2 rounded-2xl">
-                     <img src="" className="rounded-xl w-full" alt="" />
-                  </div>
-               </div>
-            </div>
-
-            {/* Masterclass Mentorship */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-               <div>
-                  <div className="glass-panel p-2 rounded-2xl">
-                  </div>
-               </div>
-               <div>
-                  <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-6">
-                     <Users className="text-secondary" />
+               
+               {/* Masterclass Mentorship */}
+               <div className="order-1 md:order-2 glass-panel p-8 rounded-3xl text-center">
+                  <div className="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                     <Users className="text-secondary w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold mb-4">Masterclass Mentorship</h3>
                   <p className="text-gray-400 leading-relaxed mb-6">
                     Our Masterclass is more than just lessons — it’s a mentorship experience. You’ll learn directly from seasoned traders who walk you through proven strategies, mindset development, and risk management.
                   </p>
-                  <Link to="/ebook" className="px-8 py-3 bg-secondary rounded-full text-white font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                  <Link to="/ebook" className="px-8 py-3 bg-secondary rounded-full text-white font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all inline-block">
                      Join the Masterclass
                   </Link>
                </div>
             </div>
 
              {/* Community Meetup */}
-             <div className="glass-panel p-8 md:p-12 rounded-3xl text-center relative overflow-hidden">
+             <div className="glass-panel p-8 md:p-12 rounded-3xl text-center relative overflow-hidden mt-12">
                 <div className="absolute top-0 left-0 w-full h-full z-0">
                     <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-cover opacity-10" alt="Community" />
                 </div>
@@ -383,7 +372,6 @@ const Home: React.FC = () => {
                     <p className="text-gray-400 max-w-2xl mx-auto mb-8">
                         MegaTrades isn’t just a trading service — it’s a growing community. Our meetups bring members together to share insights, build connections, and learn from each other in real time.
                     </p>
-                    <button className="text-white border border-white/20 hover:bg-white/5 px-6 py-2 rounded-full transition-all">
                 </div>
              </div>
           </div>
