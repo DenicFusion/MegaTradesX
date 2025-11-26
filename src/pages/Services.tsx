@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, TrendingUp, BookOpen, ExternalLink, Zap, BarChart2 } from 'lucide-react';
+import { TrendingUp, BookOpen, ExternalLink, Zap, BarChart2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Services: React.FC = () => {
@@ -16,19 +16,20 @@ const Services: React.FC = () => {
             This video is essential for understanding the first step in learning about trading.
           </p>
 
-          <div className="glass-panel p-2 rounded-3xl relative aspect-video group cursor-pointer overflow-hidden max-w-4xl mx-auto">
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center group-hover:bg-black/50 transition-all z-10">
-              <div className="w-20 h-20 bg-secondary/90 rounded-full flex items-center justify-center pl-1 shadow-2xl group-hover:scale-110 transition-transform">
-                <Play fill="white" className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            <img 
-              src="https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=1600&auto=format&fit=crop" 
-              alt="Intro Video" 
-              className="w-full h-full object-cover rounded-2xl opacity-60" 
-            />
-            <div className="absolute bottom-6 left-6 z-20">
-                <span className="bg-black/80 text-white px-4 py-2 rounded-lg text-sm font-bold">How to Use Trading Signals</span>
+          {/* Main Intro Video */}
+          <div className="glass-panel p-2 rounded-3xl relative aspect-video overflow-hidden max-w-4xl mx-auto shadow-2xl border border-white/10">
+            <video 
+              controls 
+              className="w-full h-full object-cover rounded-2xl"
+              poster="https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=1600"
+            >
+              <source src="/uploads/intro.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute bottom-6 left-6 z-20 pointer-events-none">
+                <span className="bg-black/80 text-white px-4 py-2 rounded-lg text-sm font-bold backdrop-blur-sm">
+                  How to Use Trading Signals
+                </span>
             </div>
           </div>
         </div>
@@ -103,7 +104,7 @@ const Services: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. HOW TO GET STARTED */}
+      {/* 3. HOW TO GET STARTED (VIDEO STEPS) */}
       <div className="py-24 bg-dark-950">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -112,7 +113,7 @@ const Services: React.FC = () => {
           </div>
 
           <div className="space-y-16">
-            {/* Step 1 */}
+            {/* Step 1: Deposit */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <div className="inline-block px-4 py-1 bg-secondary text-white font-bold rounded-full mb-4">Step 1</div>
@@ -124,17 +125,29 @@ const Services: React.FC = () => {
                         Join Deposit Channel <ExternalLink size={16} />
                     </a>
                 </div>
-                <div className="glass-panel p-2 rounded-2xl aspect-video relative flex items-center justify-center bg-dark-900">
-                    <Play className="text-gray-600 w-12 h-12" />
-                    <span className="absolute bottom-4 text-xs text-gray-500">Deposit Tutorial Video Placeholder</span>
+                <div className="glass-panel p-2 rounded-2xl aspect-video relative flex items-center justify-center bg-dark-900 overflow-hidden border border-white/5">
+                    <video 
+                      controls 
+                      className="w-full h-full object-cover rounded-xl"
+                      poster="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=800"
+                    >
+                      <source src="/uploads/deposit.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
-            {/* Step 2 */}
+            {/* Step 2: Trade */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="order-2 md:order-1 glass-panel p-2 rounded-2xl aspect-video relative flex items-center justify-center bg-dark-900">
-                    <Play className="text-gray-600 w-12 h-12" />
-                    <span className="absolute bottom-4 text-xs text-gray-500">Trading Guide Video Placeholder</span>
+                <div className="order-2 md:order-1 glass-panel p-2 rounded-2xl aspect-video relative flex items-center justify-center bg-dark-900 overflow-hidden border border-white/5">
+                    <video 
+                      controls 
+                      className="w-full h-full object-cover rounded-xl"
+                      poster="https://images.unsplash.com/photo-1611974765270-ca1258634369?q=80&w=800"
+                    >
+                      <source src="/uploads/trading.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div className="order-1 md:order-2">
                     <div className="inline-block px-4 py-1 bg-purple-500 text-white font-bold rounded-full mb-4">Step 2</div>
@@ -148,7 +161,7 @@ const Services: React.FC = () => {
                 </div>
             </div>
 
-            {/* Step 3 */}
+            {/* Step 3: Withdraw */}
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <div className="inline-block px-4 py-1 bg-green-500 text-white font-bold rounded-full mb-4">Step 3</div>
@@ -160,9 +173,15 @@ const Services: React.FC = () => {
                         Join Withdrawal Guide Channel <ExternalLink size={16} />
                     </a>
                 </div>
-                <div className="glass-panel p-2 rounded-2xl aspect-video relative flex items-center justify-center bg-dark-900">
-                    <Play className="text-gray-600 w-12 h-12" />
-                    <span className="absolute bottom-4 text-xs text-gray-500">Withdrawal Guide Video Placeholder</span>
+                <div className="glass-panel p-2 rounded-2xl aspect-video relative flex items-center justify-center bg-dark-900 overflow-hidden border border-white/5">
+                    <video 
+                      controls 
+                      className="w-full h-full object-cover rounded-xl"
+                      poster="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=800"
+                    >
+                      <source src="/uploads/withdrawal.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
           </div>
