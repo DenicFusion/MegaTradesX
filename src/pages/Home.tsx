@@ -372,7 +372,7 @@ const Home: React.FC = () => {
                     Our Masterclass is more than just lessons — it’s a mentorship experience. You’ll learn directly from seasoned traders who walk you through proven strategies, mindset development, and risk management.
                   </p>
                   <Link to="/ebook" className="text-secondary font-bold hover:underline flex items-center justify-center gap-1">
-                     Join the Masterclass
+                     Join the Masterclass  <ArrowRight size={16} />
                   </Link>
                </div>
             </div>
