@@ -357,8 +357,8 @@ const Home: React.FC = () => {
                   <p className="text-gray-400 leading-relaxed mb-6">
                     Experience the market in real time with our Live Trading Sessions. Watch our experts analyze charts, execute trades, and explain their decisions as they happen. It’s the fastest way to learn practical skills.
                   </p>
-                  <Link to="/services" className="text-secondary font-bold hover:underline flex items-center justify-center gap-1">
-                     Join Next Session <ArrowRight size={16} />
+                  <Link to="/gallery" className="text-secondary font-bold hover:underline flex items-center justify-center gap-1">
+                     View subscribers results <ArrowRight size={16} />
                   </Link>
                </div>
                
@@ -371,7 +371,7 @@ const Home: React.FC = () => {
                   <p className="text-gray-400 leading-relaxed mb-6">
                     Our Masterclass is more than just lessons — it’s a mentorship experience. You’ll learn directly from seasoned traders who walk you through proven strategies, mindset development, and risk management.
                   </p>
-                  <Link to="/ebook" className="px-8 py-3 bg-secondary rounded-full text-white font-bold hover:shadow-lg hover:shadow-blue-500/20 transition-all inline-block">
+                  <Link to="/ebook" className="text-secondary font-bold hover:underline flex items-center justify-center gap-1">
                      Join the Masterclass
                   </Link>
                </div>
